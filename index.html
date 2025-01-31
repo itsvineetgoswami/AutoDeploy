@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDeploy - Seamless CI/CD Deployment</title>
+    <title>AutoDeploy - Seamless CI/CD</title>
     <style>
         /* General Reset */
         * {
@@ -14,124 +14,92 @@
         }
 
         body {
-            background: #121212; /* Matte black background */
-            color: #fff;
-            font-size: 18px;
+            background: #0D0D0D;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            text-align: center;
         }
 
         .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            width: 100%;
-            padding: 50px 30px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            color: #ff8a00;
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         p {
             font-size: 1.2rem;
-            color: #ddd;
-            margin-bottom: 30px;
-            line-height: 1.8;
-            opacity: 0.8;
+            color: #aaaaaa;
+            margin-top: 10px;
+            max-width: 600px;
+            margin: auto;
         }
 
-        /* Call-to-Action Button */
         .cta-button {
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1rem;
             color: #fff;
             background: linear-gradient(90deg, #e52e71, #ff8a00);
-            border-radius: 50px;
+            border-radius: 25px;
             text-decoration: none;
-            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease-in-out;
-            display: inline-block;
+            box-shadow: 0px 0px 15px rgba(255, 138, 0, 0.5);
         }
 
         .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 25px rgba(255, 138, 0, 0.8);
         }
 
-        /* Glassmorphism Card */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 40px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-            margin-top: 50px;
-            max-width: 800px;
-            margin: auto;
-            opacity: 0.9;
+        /* Floating Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        .project-description {
-            font-size: 1.1rem;
-            color: #bbb;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.8;
-            margin-top: 30px;
-        }
-
-        .highlight {
+        /* Background Floating Text */
+        .floating-text {
+            position: absolute;
+            font-size: 5rem;
             font-weight: bold;
-            color: #ff8a00;
+            color: rgba(255, 255, 255, 0.05);
+            user-select: none;
+            animation: floatText 6s infinite ease-in-out alternate;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .cta-button {
-                font-size: 1rem;
-                padding: 12px 30px;
-            }
-
-            .glass-card {
-                padding: 20px 30px;
-                margin-top: 30px;
-            }
+        @keyframes floatText {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
         }
+
+        .floating-text:nth-child(1) { top: 10%; left: 20%; }
+        .floating-text:nth-child(2) { bottom: 15%; right: 25%; }
+        .floating-text:nth-child(3) { top: 50%; left: 5%; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Title Section -->
-        <h1>AutoDeploy</h1>
-        <p>Seamlessly Automate Your CI/CD Pipeline with AWS, EC2, CodeDeploy, and GitHub</p>
-
-        <!-- Glass Card for Description and Action -->
-        <div class="glass-card">
-            <p>With AutoDeploy, we automate the entire deployment process. Integrating with GitHub and AWS, we streamline your workflows and make sure your applications are always up to date with a fully managed <span class="highlight">CI/CD pipeline</span>.</p>
-            <a href="#" class="cta-button">Start Automating</a>
-        </div>
-
-        <!-- Project Description -->
-        <div class="project-description">
-            <p>AutoDeploy is designed to simplify your deployment process by fully automating updates to your <span class="highlight">AWS EC2 instances</span> using <span class="highlight">CodeDeploy</span>. It integrates directly with <span class="highlight">GitHub</span>, ensuring that every time you push your code to the repository, it automatically triggers the deployment process.</p>
-            <p>The entire flow is managed via an intuitive <span class="highlight">CI/CD pipeline</span> built to scale with your needs. This setup reduces human error, streamlines your DevOps process, and ensures that your application is always running the latest code!</p>
-        </div>
+        <h1>AutoDeploy 🚀</h1>
+        <p>Seamless CI/CD for Effortless Deployments. Automate. Deploy. Succeed.</p>
+        <a href="#" class="cta-button">Get Started</a>
     </div>
+
+    <div class="floating-text">CI/CD</div>
+    <div class="floating-text">Deploy</div>
+    <div class="floating-text">AWS</div>
 
 </body>
 </html>
