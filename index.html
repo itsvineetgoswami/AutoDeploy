@@ -21,46 +21,83 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            position: relative;
+            font-size: 16px;
         }
 
         .container {
             text-align: center;
             animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             background: linear-gradient(90deg, #ff8a00, #e52e71);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
+            letter-spacing: 1.5px;
+            animation: gradientAnimation 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
+            50% { background: linear-gradient(90deg, #00b5e2, #f06b90); }
+            100% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
         }
 
         p {
             font-size: 1.2rem;
             color: #aaaaaa;
-            margin-top: 10px;
+            margin-top: 20px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+            width: 100%;
             max-width: 600px;
             margin: auto;
+            text-align: center;
         }
 
         .cta-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            font-size: 1rem;
+            margin-top: 30px;
+            padding: 14px 30px;
+            font-size: 1.2rem;
             color: #fff;
             background: linear-gradient(90deg, #e52e71, #ff8a00);
             border-radius: 25px;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0px 0px 15px rgba(255, 138, 0, 0.5);
+            box-shadow: 0px 0px 20px rgba(255, 138, 0, 0.5);
+            transform: scale(1);
+            cursor: pointer;
         }
 
         .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 30px rgba(255, 138, 0, 0.8);
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: #fff;
+        }
+
+        .cta-button:active {
             transform: scale(1.05);
-            box-shadow: 0px 0px 25px rgba(255, 138, 0, 0.8);
+            box-shadow: 0px 0px 20px rgba(255, 138, 0, 0.6);
         }
 
         /* Floating Animation */
@@ -74,9 +111,9 @@
             position: absolute;
             font-size: 5rem;
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.1);
             user-select: none;
-            animation: floatText 6s infinite ease-in-out alternate;
+            animation: floatText 10s infinite ease-in-out alternate;
         }
 
         @keyframes floatText {
@@ -84,9 +121,50 @@
             100% { transform: translateY(10px); }
         }
 
-        .floating-text:nth-child(1) { top: 10%; left: 20%; }
-        .floating-text:nth-child(2) { bottom: 15%; right: 25%; }
+        .floating-text:nth-child(1) { top: 15%; left: 20%; }
+        .floating-text:nth-child(2) { bottom: 10%; right: 25%; }
         .floating-text:nth-child(3) { top: 50%; left: 5%; }
+
+        /* Creative Styled Paragraph for Project Description */
+        .project-description {
+            background: linear-gradient(90deg, #00b5e2, #f06b90);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 1.2rem;
+            text-align: justify;
+            margin: 50px auto;
+            max-width: 800px;
+            padding: 20px;
+            line-height: 1.6;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+            animation: textGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff8a00, 0 0 30px #ff8a00; }
+            100% { text-shadow: 0 0 20px #fff, 0 0 30px #ff8a00, 0 0 40px #ff8a00; }
+        }
+
+        .project-description span {
+            color: #ff8a00;
+            font-weight: bold;
+        }
+
+        /* Mobile and Tablet Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            .glass-card {
+                padding: 20px 30px;
+                margin-top: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -94,7 +172,16 @@
     <div class="container">
         <h1>AutoDeploy 🚀</h1>
         <p>Seamless CI/CD for Effortless Deployments. Automate. Deploy. Succeed.</p>
-        <a href="#" class="cta-button">Get Started</a>
+        <div class="glass-card">
+            <p>AutoDeploy automates your CI/CD pipeline, ensuring your code is deployed seamlessly to production. No more manual steps, just reliable, fast deployments.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </div>
+
+    <div class="project-description">
+        <p>AutoDeploy is built to <span>automate your CI/CD pipeline</span> with seamless integration to tools like <span>GitHub, AWS EC2, CodeDeploy</span>, and other AWS services. Here's how it works:</p>
+        <p>We start by linking your <span>GitHub repository</span> to trigger the pipeline every time you push code. From there, the changes are pushed directly to an <span>EC2 instance</span>, where the latest version of your application gets deployed using <span>AWS CodeDeploy</span>. This process ensures quick, reliable, and consistent deployments every time you make a change.</p>
+        <p>The entire process is <span>automated</span>, reducing the chance of errors and ensuring that your app runs smoothly on production with minimal downtime. Whether you're deploying a simple website or a complex microservice architecture, AutoDeploy ensures your code reaches your users faster than ever!</p>
     </div>
 
     <div class="floating-text">CI/CD</div>
