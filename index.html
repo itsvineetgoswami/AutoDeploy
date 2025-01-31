@@ -14,7 +14,7 @@
         }
 
         body {
-            background: #1d1f21;
+            background: #121212; /* Matte black background */
             color: #fff;
             font-size: 18px;
             display: flex;
@@ -25,7 +25,6 @@
             text-align: center;
         }
 
-        /* Main Container */
         .container {
             position: relative;
             z-index: 1;
@@ -34,49 +33,25 @@
             padding: 50px 30px;
         }
 
-        /* Header Styling */
         h1 {
-            font-size: 3.8rem;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientAnimation 5s ease-in-out infinite;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ff8a00;
+            text-transform: uppercase;
+            margin-bottom: 30px;
         }
 
-        /* Gradient Animation for Header */
-        @keyframes gradientAnimation {
-            0% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
-            50% { background: linear-gradient(90deg, #00b5e2, #f06b90); }
-            100% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
-        }
-
-        /* Paragraph Styling */
         p {
             font-size: 1.2rem;
-            margin-top: 20px;
-            color: #aaa;
+            color: #ddd;
+            margin-bottom: 30px;
             line-height: 1.8;
             opacity: 0.8;
-            max-width: 800px;
-            margin: auto;
         }
 
-        /* Glassmorphism Card Styling */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px 50px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            margin-top: 30px;
-            max-width: 700px;
-            margin: auto;
-        }
-
+        /* Call-to-Action Button */
         .cta-button {
-            margin-top: 30px;
             padding: 15px 40px;
             font-size: 1.1rem;
             color: #fff;
@@ -84,73 +59,57 @@
             border-radius: 50px;
             text-decoration: none;
             box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
-            transform: scale(1);
             transition: all 0.3s ease-in-out;
+            display: inline-block;
         }
 
         .cta-button:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
         }
 
-        /* Floating Text Animation */
-        .floating-text {
-            position: absolute;
-            font-size: 6rem;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.1);
-            user-select: none;
-            animation: floatText 10s infinite ease-in-out alternate;
-        }
-
-        @keyframes floatText {
-            0% { transform: translateY(-20px); }
-            100% { transform: translateY(20px); }
-        }
-
-        .floating-text:nth-child(1) { top: 15%; left: 5%; }
-        .floating-text:nth-child(2) { bottom: 10%; right: 10%; }
-        .floating-text:nth-child(3) { top: 50%; left: 25%; }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .cta-button {
-                font-size: 1rem;
-                padding: 12px 25px;
-            }
-            .glass-card {
-                padding: 20px 30px;
-                margin-top: 20px;
-            }
-        }
-
-        /* Stylish Project Description */
-        .project-description {
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
             margin-top: 50px;
-            font-size: 1.1rem;
-            color: #ddd;
             max-width: 800px;
             margin: auto;
-            line-height: 1.6;
-            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
         }
 
-        .project-description span {
+        .project-description {
+            font-size: 1.1rem;
+            color: #bbb;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+
+        .highlight {
             font-weight: bold;
             color: #ff8a00;
         }
 
-        /* Animation for Project Description */
-        @keyframes textGlow {
-            0% { text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff8a00, 0 0 30px #ff8a00; }
-            100% { text-shadow: 0 0 20px #ff8a00, 0 0 30px #ff8a00, 0 0 40px #ff8a00; }
-        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
 
-        .project-description:hover {
-            animation: textGlow 2s ease-in-out infinite alternate;
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 30px;
+            }
+
+            .glass-card {
+                padding: 20px 30px;
+                margin-top: 30px;
+            }
         }
     </style>
 </head>
@@ -158,25 +117,20 @@
 
     <div class="container">
         <!-- Title Section -->
-        <h1>AutoDeploy - CI/CD Pipeline</h1>
-        <p>Automating your deployments with AWS services and GitHub integration.</p>
+        <h1>AutoDeploy</h1>
+        <p>Seamlessly Automate Your CI/CD Pipeline with AWS, EC2, CodeDeploy, and GitHub</p>
 
-        <!-- Glass Card for Action -->
+        <!-- Glass Card for Description and Action -->
         <div class="glass-card">
-            <p>AutoDeploy streamlines the deployment process by automating CI/CD pipelines through AWS EC2, CodeDeploy, and GitHub integration. Say goodbye to manual deployment steps!</p>
+            <p>With AutoDeploy, we automate the entire deployment process. Integrating with GitHub and AWS, we streamline your workflows and make sure your applications are always up to date with a fully managed <span class="highlight">CI/CD pipeline</span>.</p>
             <a href="#" class="cta-button">Start Automating</a>
         </div>
 
-        <!-- Floating Text Effects -->
-        <div class="floating-text">CI/CD</div>
-        <div class="floating-text">GitHub</div>
-        <div class="floating-text">AWS EC2</div>
-    </div>
-
-    <!-- Project Description -->
-    <div class="project-description">
-        <p>AutoDeploy automates the process of deploying code updates to production by using <span>AWS EC2</span>, <span>AWS CodeDeploy</span>, and <span>GitHub integration</span>. The workflow begins when a code push is made to GitHub, triggering an automated process that pulls the changes, builds the application, and deploys it to your <span>EC2 instances</span>.</p>
-        <p>The deployment process is fully managed with a <span>CI/CD pipeline</span>, ensuring smooth and error-free deployments at any time. This allows developers to focus on writing code instead of worrying about deployment steps.</p>
+        <!-- Project Description -->
+        <div class="project-description">
+            <p>AutoDeploy is designed to simplify your deployment process by fully automating updates to your <span class="highlight">AWS EC2 instances</span> using <span class="highlight">CodeDeploy</span>. It integrates directly with <span class="highlight">GitHub</span>, ensuring that every time you push your code to the repository, it automatically triggers the deployment process.</p>
+            <p>The entire flow is managed via an intuitive <span class="highlight">CI/CD pipeline</span> built to scale with your needs. This setup reduces human error, streamlines your DevOps process, and ensures that your application is always running the latest code!</p>
+        </div>
     </div>
 
 </body>
