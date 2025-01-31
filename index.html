@@ -32,6 +32,7 @@
             z-index: 1;
         }
 
+        /* Make AutoDeploy text more visible with a solid background */
         h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -41,14 +42,18 @@
             display: inline-block;
             letter-spacing: 1.5px;
             animation: gradientAnimation 4s ease-in-out infinite;
+            color: transparent;
+            background-color: #0D0D0D; /* Set a solid dark background */
         }
 
+        /* Improved visibility with gradient animation */
         @keyframes gradientAnimation {
             0% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
             50% { background: linear-gradient(90deg, #00b5e2, #f06b90); }
             100% { background: linear-gradient(90deg, #ff8a00, #e52e71); }
         }
 
+        /* Better contrast for text */
         p {
             font-size: 1.2rem;
             color: #aaaaaa;
@@ -106,7 +111,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Background Floating Text */
+        /* Floating Background Text */
         .floating-text {
             position: absolute;
             font-size: 5rem;
